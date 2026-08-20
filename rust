@@ -1,0 +1,34 @@
+use std::io;
+fn main(){
+    let ano1 = 2020;
+    let ano2 = 2024;
+    let modelo1 = "Hyundai HB20";
+    let modelo2 = "Volkswagen Polo";
+    let valor1:i32 = 400;
+    let valor2:i32 = 550;
+    let km1 = 12000;
+    let km2 = 15000;  
+
+    let mut dia:i32; 
+
+    let mut entrada = string::new();
+    println!("escolha uma opção:(1 para HB20, 2 para Polo )");
+    io::stdin().read_line(&mut entrada);
+    let opcao:i32 = entrada.trim().parse().unwrap(); 
+    let mut res1;
+    match opcao {
+        1=>{println!("modelo={} \n ano={} \n valor={} \n km={}",modelo1,ano1,valor1,km1);
+        println!("fale quantos dias vc quer ultilizar?");
+        io::stdin().read_line(&mut dia);
+        res1 = dia * valor1;
+        println!("Vc vai pagar={} por ={}",res1,dia);
+          }
+        2=>{println!("modelo={} \n ano={} \n valor={} \n km={}",modelo2,ano2,valor2,km2);
+        println!("fale quantos dias vc quer ultilizar?");
+        io::stdin().read_line(&mut dia);
+        let res2:i32 = dia * valor2;
+        println!("Vc vai pagar={} por ={}",res2,dia);
+        }
+        _=>println!("não tem esse carro")
+    } 
+}
