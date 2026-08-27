@@ -1,21 +1,24 @@
 use std::io;
 fn main(){
 
-let mut opcao = String::new();
+
 while true {
  println!("=================================");
  println!("       SISTEMA DE ESTOQUE        ");
  println!("=================================");
  println!("1 - Cadastrar produto \n 2 - Entrada de produtos \n 3 - Saída / Venda \n 4 - Consultar produtos \n 5 - Relatório de vendas \n 0 - SAÍDA");
  println!("Digita um das opção acima:");
- io::stdin().read_line(&mut opcao);
+ let mut entrada =String::new();
+ io::stdin().read_line(&mut entrada);
+ let opcao:i32=entrada.trim().parse().unwrap();
     match opcao {
          0 => break,
-         1 => println!(" Cadastrar produto"),
-         2 => println!("Entrada de produtos"),
-         3 => println!("Saída / Venda"),
-         4 => println!("Consultar produtos"),
-         5 => println!("Relatório de vendas"),
+         1 =>{ println!(" Cadastrar produto"),}
+         2 =>{ println!("Entrada de produtos"),}
+         3 =>{ println!("Saída / Venda"),}
+         4 =>{ println!("Consultar produtos"),}
+         5 =>{ println!("Relatório de vendas"),}
          _ => println!("Opção inválida"),
     }
+
  } }
