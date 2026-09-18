@@ -1,41 +1,37 @@
-Desenvolva um programa contendo as seguintes regras de negócios:
-1. O programa deve ter 3 variáveis chamadas produtos(nome do produto) ex:
-produtoArroz, produtoMacarrao e produtoMolhodeTomate, cada produto deve ter um valor
-inicial de 1 a 10.
-2. O usuário pode pedir para retirar qualquer valor de produtos.
-3. Ao final deva emitir uma saída contendo os produtos que o usuário retirou do estoque.
-4. Valide As entradas negativas.
-
-  
-std::io;
+use std::io;
 fn main(){
     let mut produtoArroz:i32 = 9;
     let mut produtoMacarrao:i32 = 10;
     let mut produtoMolhodeTomate:i32 = 5;
     
-    let mut entrada:String::new();
+    let mut entrada = String::new();
     
     while true{
     println!("Digite qual produto quer tirar: (1 arroz, 2 macarrao, 3 molho de tomate , 0 para sair)");
     io::stdin().read_line(&mut entrada).unwrap();
     let opcao: i32 = entrada.trim().parse().unwrap();
     match opcao{
-    println!("digite quanto  vc quer tirar:");
-    io::stdin().read_line(&mut entrada).unwrap();
-    let tirar: i32 = entrada.trim().parse().unwrap();
-    0 => break
+    0 => break,
     1 =>{
-        
-        if tirar < 0{
+        let mut entrada1 = String::new();
+        println!("digite quanto  vc quer tirar:");
+        io::stdin().read_line(&mut entrada1).unwrap();
+        let tirar: i32 = entrada1.trim().parse().unwrap();
+    
+        if tirar < 0 {
           println!("Digite um valor positivo");
         }else if tirar > produtoArroz{
           println!("Vc quer tirando mais do que tem no estoque");
         }else if tirar <= produtoArroz {
-            produtoArroz - tirar
-            println!("vc tirou {} agora tem")
+        
+            let mut res = produtoArroz - tirar;
+            produtoArroz = res;
+            println!("vc tirou {} agora tem {} arroz",tirar,produtoArroz);
         }
+    },
+    _=>{
+        print!("erro");
     }
-       
     }
   }
 }
