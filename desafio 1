@@ -7,6 +7,7 @@ fn main(){
     let mut entrada = String::new();
     
     while true{
+    println!("tem {} arroz, {} macarrao, {} molho de tomate",produtoArroz,produtoMacarrao,produtoMolhodeTomate);
     println!("Digite qual produto quer tirar: (1 arroz, 2 macarrao, 3 molho de tomate , 0 para sair)");
     io::stdin().read_line(&mut entrada).unwrap();
     let opcao: i32 = entrada.trim().parse().unwrap();
@@ -23,10 +24,41 @@ fn main(){
         }else if tirar > produtoArroz{
           println!("Vc quer tirando mais do que tem no estoque");
         }else if tirar <= produtoArroz {
-        
-            let mut res = produtoArroz - tirar;
-            produtoArroz = res;
-            println!("vc tirou {} agora tem {} arroz",tirar,produtoArroz);
+          let mut res = produtoArroz - tirar;
+          produtoArroz = res;
+          println!("vc tirou {} agora tem {} arroz",tirar,produtoArroz);
+        }
+    },
+    2 =>{
+        let mut entrada1 = String::new();
+        println!("digite quanto  vc quer tirar:");
+        io::stdin().read_line(&mut entrada1).unwrap();
+        let tirar: i32 = entrada1.trim().parse().unwrap();
+    
+        if tirar < 0 {
+          println!("Digite um valor positivo");
+        }else if tirar > produtoMacarrao{
+          println!("Vc quer tirando mais do que tem no estoque");
+        }else if tirar <= produtoMacarrao {
+          let mut res = produtoMacarrao - tirar;
+          produtoMacarrao = res;
+          println!("vc tirou {} agora tem {} Macarrao",tirar,produtoMacarrao);
+        }
+    },
+    3 =>{
+        let mut entrada1 = String::new();
+        println!("digite quanto  vc quer tirar:");
+        io::stdin().read_line(&mut entrada1).unwrap();
+        let tirar: i32 = entrada1.trim().parse().unwrap();
+    
+        if tirar < 0 {
+          println!("Digite um valor positivo");
+        }else if tirar > produtoMolhodeTomate{
+          println!("Vc quer tirando mais do que tem no estoque");
+        }else if tirar <= produtoMolhodeTomate {
+          let mut res = produtoMolhodeTomate - tirar;
+          produtoMolhodeTomate = res;
+          println!("vc tirou {} agora tem {} Molho de Tomate",tirar,produtoMolhodeTomate);
         }
     },
     _=>{
