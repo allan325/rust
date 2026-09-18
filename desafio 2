@@ -1,0 +1,21 @@
+fn main (){
+    let mut primeiro :i32 = 0;
+    let mut segundo :i32 = 1;
+
+    for i in 0..=20{
+        let mut resultado :i32 = 0 ;
+        resultado = primeiro + segundo;
+        println!("{} {} {}a",primeiro,segundo,resultado);
+        primeiro = resultado;
+        resultado = primeiro + segundo;
+
+        println!("{} {} {}b",primeiro,segundo,resultado);
+        segundo = resultado;
+        resultado = primeiro + segundo;
+        println!("{} {} {}c",primeiro,segundo,resultado);
+        primeiro = segundo;
+        segundo = resultado;
+
+        println!("{} dd",segundo);
+    }
+} 
