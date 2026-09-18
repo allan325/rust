@@ -1,21 +1,34 @@
 fn main (){
     let mut primeiro :i32 = 0;
     let mut segundo :i32 = 1;
+    let mut resultado :i32 = 0 ;
+    
+    let mut Primeiro :i32 = 0;
+    let mut Segundo :i32 = 1;
+    let mut Resultado :i32 = 0 ;
 
-    for i in 0..=20{
-        let mut resultado :i32 = 0 ;
+println!("Par:");
+    for i in 1..=20{
         resultado = primeiro + segundo;
-        println!("{} {} {}a",primeiro,segundo,resultado);
-        primeiro = resultado;
-        resultado = primeiro + segundo;
-
-        println!("{} {} {}b",primeiro,segundo,resultado);
-        segundo = resultado;
-        resultado = primeiro + segundo;
-        println!("{} {} {}c",primeiro,segundo,resultado);
+        //println!("{} {} {}a",primeiro,segundo,resultado);
         primeiro = segundo;
         segundo = resultado;
-
-        println!("{} dd",segundo);
+        
+        if primeiro % 2 ==  0{
+           
+            print!("{},",primeiro);
+        }
     }
-} 
+println!("    ");
+println!("Impar:");
+    for x in 1..=20{
+        Resultado = Primeiro + Segundo;
+        //println!("{} {} {}a",Primeiro,Segundo,Resultado);
+        Primeiro = Segundo;
+        Segundo = Resultado;
+        
+        if Primeiro % 2 !=  0{
+            print!("{},",Primeiro);
+        }
+    }
+}
